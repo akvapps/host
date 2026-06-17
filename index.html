@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akrivia Central</title>
+    <script>
+      // Apply the persisted theme before first paint so there's no flash and
+      // the splash matches the app theme. Mirrors src/store/theme-store.ts.
+      try {
+        var t = JSON.parse(localStorage.getItem("central-theme"));
+        if (t && t.state && t.state.theme === "dark") {
+          document.documentElement.classList.add("dark");
+          document.documentElement.style.colorScheme = "dark";
+        }
+      } catch (e) {}
+    </script>
+    <style>
+      #app-splash {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        background: #f4f7f9;
+      }
+      html.dark #app-splash {
+        background: oklch(0.18 0.02 254);
+      }
+      #app-splash svg {
+        width: 56px;
+        height: 56px;
+        transform-origin: center;
+        animation: app-splash-spin 1.5s linear infinite;
+      }
+      #app-splash .lbl {
+        font:
+          500 14px/1.5 ui-sans-serif,
+          system-ui,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        letter-spacing: 0.04em;
+        display: inline-block;
+        padding-bottom: 2px;
+        background: linear-gradient(
+          90deg,
+          #97a1ac 0%,
+          #97a1ac 35%,
+          #1c2733 50%,
+          #97a1ac 65%,
+          #97a1ac 100%
+        );
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: app-splash-shimmer 1.6s linear infinite;
+      }
+      html.dark #app-splash .lbl {
+        background: linear-gradient(
+          90deg,
+          #5b6675 0%,
+          #5b6675 35%,
+          #e6ebf2 50%,
+          #5b6675 65%,
+          #5b6675 100%
+        );
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+      @keyframes app-splash-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes app-splash-shimmer {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #app-splash svg,
+        #app-splash .lbl {
+          animation: none;
+        }
+        #app-splash .lbl {
+          color: #64707d;
+          -webkit-text-fill-color: currentColor;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-C8rMkuMC.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/chunk-aKtaBQYM.js">
+    <link rel="modulepreload" crossorigin href="/assets/utils-B6KiDbIe.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-DxZHKUKd.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-dom-rMUovVdx.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-BqYSgJeI.js">
+    <link rel="modulepreload" crossorigin href="/assets/button-De2sXngw.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-CVBACLlj.css">
+  </head>
+  <body>
+    <!-- Splash shown until React mounts and replaces #root's contents. -->
+    <div id="root">
+      <div id="app-splash">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Akrivia Central">
+          <defs>
+            <linearGradient id="splash-g" x1="14" y1="10" x2="50" y2="54" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#3FC6FF" />
+              <stop offset=".55" stop-color="#2A86F0" />
+              <stop offset="1" stop-color="#1C5BD6" />
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#splash-g)" stroke-width="4" stroke-linecap="round">
+            <path d="M17.28 48.35A22 22 0 0 0 46.72 48.35" />
+            <path d="M17.28 48.35A22 22 0 0 0 46.72 48.35" transform="rotate(120 32 32)" />
+            <path d="M17.28 48.35A22 22 0 0 0 46.72 48.35" transform="rotate(240 32 32)" />
+          </g>
+          <g fill="url(#splash-g)">
+            <circle cx="32" cy="10" r="3.3" />
+            <circle cx="51.05" cy="43" r="3.3" />
+            <circle cx="12.95" cy="43" r="3.3" />
+          </g>
+          <path d="M21 37.5 32 23.5 43 37.5" fill="none" stroke="url(#splash-g)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="lbl">Loading…</span>
+      </div>
+    </div>
+  </body>
+</html>
