@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BqYSgJeI.js";import{t}from"./message-square-vIpeV9s1.js";import{t as n}from"./module-placeholder-Bs5iJk0A.js";var r=e();function i(){return(0,r.jsx)(n,{icon:t,title:`Chat`,description:`Direct and group messaging across Akrivia teams and clients.`})}export{i as ChatPage};
