@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BqYSgJeI.js";import{t}from"./messages-square-Bvm7pGdq.js";import{t as n}from"./module-placeholder-Bs5iJk0A.js";var r=e();function i(){return(0,r.jsx)(n,{icon:t,title:`Discussions`,description:`Threaded discussions, announcements, and team conversations.`})}export{i as DiscussionsPage};
